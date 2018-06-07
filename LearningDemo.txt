@@ -1,0 +1,25 @@
+pragma solidity ^0.4.18;
+
+contract LearningDemo{
+    
+    uint value1;
+    uint value2;
+    uint sum;
+    uint multi;
+    
+    function LearningDemo(uint x, uint y)public{
+        value1=x;
+        value2=y;
+        
+   }
+    
+    function put()public {
+        sum=value1+value2; 
+        multi=value1*value2;
+        
+        
+    }
+   function gotput() view public returns(uint, uint) {
+       return (sum, multi);
+   } 
+}

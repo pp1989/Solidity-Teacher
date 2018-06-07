@@ -1,0 +1,29 @@
+pragma solidity ^0.4.18;
+
+contract SecureTransfer{
+    
+    uint myHash;
+    address public owner;
+    address public players;
+    
+    mapping(address=> uint) public token;
+
+    
+    function SecureTransfer() public {
+        
+        owner=msg.sender;
+        myHash=uint256(keccak256(block.difficulty,now,players));
+        
+        while(myHash<100000){
+       
+        if(myHash<100000){
+            
+            myHash=100000-myHash;
+        }
+        }
+        
+    }
+    function ReHash() view public returns(uint256) {
+        return myHash;
+    }
+}
